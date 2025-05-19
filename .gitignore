@@ -1,0 +1,54 @@
+# --------------------------
+# Compilación de Java
+# --------------------------
+*.class
+
+# --------------------------
+# Directorios de compilación
+# --------------------------
+/build/
+/target/
+
+# --------------------------
+# Archivos generados por Gradle
+# --------------------------
+.gradle/
+/gradle/
+
+# Archivos ejecutables de Gradle Wrapper
+gradlew
+gradlew.bat
+
+# Archivos de lock de Gradle
+gradle-wrapper.jar
+
+# --------------------------
+# IDE: IntelliJ IDEA
+# --------------------------
+.idea/
+/*.iml
+*.iws
+*.ipr
+out/
+
+# --------------------------
+# Sistema operativo
+# --------------------------
+.DS_Store
+Thumbs.db
+
+# --------------------------
+# Selenium Drivers
+# --------------------------
+src/test/resources/driver/chromedriver.exe
+
+# --------------------------
+# Archivos de logs
+# --------------------------
+*.log
+
+# --------------------------
+# Otros
+# --------------------------
+*.tmp
+*.swp
