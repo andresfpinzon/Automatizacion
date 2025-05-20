@@ -52,3 +52,5 @@ src/test/resources/driver/chromedriver.exe
 # --------------------------
 *.tmp
 *.swp
+
+
