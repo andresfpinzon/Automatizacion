@@ -1,12 +1,16 @@
 package co.com.AutoFacebook.stepsdefinitions;
 
+import co.com.AutoFacebook.models.CredencialesInicioSesion;
+import co.com.AutoFacebook.models.DatosSeleccionCelular;
 import co.com.AutoFacebook.models.RangoValor;
-import co.com.AutoFacebook.tasks.AbrirPgMercadoLibre;
-import co.com.AutoFacebook.tasks.SeleccionarCelular;
-import co.com.AutoFacebook.tasks.SeleccionarFiltro;
+import co.com.AutoFacebook.questions.ProductoEnCarrito;
+import co.com.AutoFacebook.tasks.*;
+import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import net.serenitybdd.screenplay.ensure.Ensure;
+
 
 import java.util.List;
 
@@ -18,39 +22,15 @@ public class SeleccionCelularStepDefinitions {
         theActorInTheSpotlight().wasAbleTo(AbrirPgMercadoLibre.pagina());
     }
 
-    @Cuando("^navega a través de las categorías Tecnología, Celulares y Teléfonos y aplica un filtro por precio maximo y minimo$")
-    public void navegaATravésDeLasCategoríasTecnologíaCelularesYTeléfonosYAplicaUnFiltroPorPrecioMaximoYMinimo(List<RangoValor> rangovalor) {
-        theActorInTheSpotlight().attemptsTo(SeleccionarFiltro.enCategoriasCelulares(rangovalor));
-    }
-
-    @Cuando("^selecciona un celular de la lista de resultados$")
-    public void seleccionaUnCelularDeLaListaDeResultados() {
-        theActorInTheSpotlight().attemptsTo(SeleccionarCelular.enListaCelulares());
-    }
-
-    @Cuando("^da clic en el botón Agregar al carrito$")
-    public void daClicEnElBotónAgregarAlCarrito() {
-
-    }
-
-    @Cuando("^da clic en el botón Ingresar$")
-    public void daClicEnElBotónIngresar() {
-
-    }
-
-    @Cuando("^selecciona la opción Continuar con Google$")
-    public void seleccionaLaOpciónContinuarConGoogle() {
-
-    }
-
-    @Cuando("^elige la cuenta de Google deseada$")
-    public void eligeLaCuentaDeGoogleDeseada() {
-
+    @Cuando("^navega a través de las categorías , selecciona un telefono y se autentica para realizar la compra$")
+    public void navegaATravésDeLasCategoríasSeleccionaUnTelefonoYSeAutenticaParaRealizarLaCompra(List<DatosSeleccionCelular> datosSeleccion) {
+        theActorInTheSpotlight().attemptsTo(SeleccionarCelular.seleccionarCelular(datosSeleccion));
     }
 
     @Entonces("^el usuario debe estar autenticado y ver el producto en el carrito$")
     public void elUsuarioDebeEstarAutenticadoYVerElProductoEnElCarrito() {
-
+        theActorInTheSpotlight().attemptsTo(Ensure.that(ProductoEnCarrito.PRODUCTO_EN_CARRITO).isDisplayed());
     }
+
 
 }

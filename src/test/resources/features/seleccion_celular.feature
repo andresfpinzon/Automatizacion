@@ -9,12 +9,7 @@ Característica: Búsqueda y compra de un celular en Mercado Libre
   @busquedaCelularMercadoLibre
   Escenario: Buscar un celular, agregarlo al carrito e iniciar sesión con Google
     Dado que el usuario está en la página principal de Mercado Libre
-    Cuando navega a través de las categorías Tecnología, Celulares y Teléfonos y aplica un filtro por precio maximo y minimo
-      | valormin |valormax|
-      | 700000   |1000000 |
-    Y selecciona un celular de la lista de resultados
-    Y da clic en el botón Agregar al carrito
-    Y da clic en el botón Ingresar
-    Y selecciona la opción Continuar con Google
-    Y elige la cuenta de Google deseada
+    Cuando navega a través de las categorías , selecciona un telefono y se autentica para realizar la compra
+      | valormin |valormax| usuarios                   |clave        |
+      | 700000   |1000000 | correoautoprub@gmail.com   |Andres12345! |
     Entonces el usuario debe estar autenticado y ver el producto en el carrito

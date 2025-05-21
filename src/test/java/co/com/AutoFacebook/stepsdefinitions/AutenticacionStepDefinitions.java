@@ -15,7 +15,6 @@ public class AutenticacionStepDefinitions {
     @Dado("^que el usuario se encuentra en la pagina de inicio de sesion de Facebook$")
     public void queElUsuarioSeEncuentraEnLaPaginaDeInicioDeSesionDeFacebook() {
         theActorInTheSpotlight().wasAbleTo(AbrirPagina.lapagina());
-
     }
 
     @Cuando("^ingrese las credenciales correctas \\(usuario y contrasena\\)$")
